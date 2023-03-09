@@ -254,51 +254,6 @@ function getsource($url) {
     		curl_close($curl);
     return $content;
 }
-function bing($dork) {
-	$npage = 1;
-	$npages = 30000;
-	$allLinks = array();
-	$lll = array();
-	while($npage <= $npages) {
-	    $x = getsource("http://www.bing.com/search?q=".$dork."&first=".$npage);
-	    if($x) {
-			preg_match_all('#<h2><a href="(.*?)" h="ID#', $x, $findlink);
-			foreach ($findlink[1] as $fl) array_push($allLinks, $fl);
-			$npage = $npage + 10;
-			if (preg_match("(first=" . $npage . "&amp)siU", $x, $linksuiv) == 0) break;
-		} else break;
-	}
-	$URLs = array();
-	foreach($allLinks as $url){
-	    $exp = explode("/", $url);
-	    $URLs[] = $exp[2];
-	}
-	$array = array_filter($URLs);
-	$array = array_unique($array);
- 	$sss = count(array_unique($array));
-	foreach($array as $domain) {
-		echo $domain."\n";
-	}
-}
-function reverse($url) {
-	$ch = curl_init("http://domains.yougetsignal.com/domains.php");
-		  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
-		  curl_setopt($ch, CURLOPT_POSTFIELDS,  "remoteAddress=$url&ket=");
-		  curl_setopt($ch, CURLOPT_HEADER, 0);
-		  curl_setopt($ch, CURLOPT_POST, 1);
-	$resp = curl_exec($ch);
-	$resp = str_replace("[","", str_replace("]","", str_replace("\"\"","", str_replace(", ,",",", str_replace("{","", str_replace("{","", str_replace("}","", str_replace(", ",",", str_replace(", ",",",  str_replace("'","", str_replace("'","", str_replace(":",",", str_replace('"','', $resp ) ) ) ) ) ) ) ) ) ))));
-	$array = explode(",,", $resp);
-	unset($array[0]);
-	foreach($array as $lnk) {
-		$lnk = "http://$lnk";
-		$lnk = str_replace(",", "", $lnk);
-		echo $lnk."\n";
-		ob_flush();
-		flush();
-	}
-		curl_close($ch);
-}
 if(get_magic_quotes_gpc()) {
 	function idx_ss($array) {
 		return is_array($array) ? array_map('idx_ss', $array) : stripslashes($array);
