@@ -12,7 +12,7 @@ class Forbidden {
 		return base64_decode($base_);
 	}
 	public function Error403($err) {
-		$errCode = str_replace(array("/_a9", "_+zB", "_\y0") "", $err);
+		$errCode = str_replace(array("/_a9", "_+zB", "_\y0"), "", $err);
 		return $errCode;
 	}
 }
